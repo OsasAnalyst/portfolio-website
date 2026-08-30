@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osaretin Idiagbonmwen — FP&A Analyst</title>
+<meta name="description" content="Chartered Accountant turned FP&A analyst for DTC and SaaS companies. Financial modeling, forecasting, and variance analysis built on real filings and transaction data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23123328'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23f6f4ee' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Osaretin Idiagbonmwen — FP&A Analyst">
+<meta property="og:description" content="Chartered Accountant turned FP&A analyst for DTC and SaaS companies. Financial modeling, forecasting, and variance analysis built on real filings and transaction data.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/og-image.png">
+<meta name="twitter:title" content="Osaretin Idiagbonmwen — FP&A Analyst">
+<meta name="twitter:description" content="Chartered Accountant turned FP&A analyst for DTC and SaaS companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #14201c;
+    --paper: #f6f4ee;
+    --paper-plain: #f1efe8;
+    --paper-raised: #fbfaf6;
+    --ledger-line: #d8d2c2;
+    --forest: #1f4d3f;
+    --forest-deep: #123328;
+    --clay: #b5542e;
+    --gold: #a9822f;
+    --muted: #4c544f;
+    --muted-2: #6b746e;
+
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    --maxw: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  ::selection{background:var(--forest); color:var(--paper);}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* Ledger-rule texture: reserved ONLY for sections/blocks that show numbers or tabular data */
+  .ledger-bg{
+    background-image:
+      repeating-linear-gradient(180deg, transparent, transparent 37px, var(--ledger-line) 37px, var(--ledger-line) 38px);
+  }
+
+  /* ===== NAV ===== */
+  .nav{
+    position:sticky; top:0; z-index:60;
+    background:rgba(246,244,238,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--ledger-line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.06em;
+    color:var(--forest-deep); text-decoration:none; font-weight:600;
+  }
+  .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
+  .nav-links a{font-size:13.5px; text-decoration:none; color:var(--muted-2); transition:color .15s ease;}
+  .nav-links a:hover{color:var(--forest-deep);}
+  .nav-cta{
+    font-size:13px; font-weight:600; padding:8px 16px;
+    border:1px solid var(--forest-deep); border-radius:2px;
+    text-decoration:none; color:var(--forest-deep); white-space:nowrap;
+    transition:all .15s ease;
+  }
+  .nav-cta:hover{background:var(--forest-deep); color:var(--paper);}
+
+  .nav-burger{
+    display:none; flex-direction:column; gap:4px;
+    background:none; border:none; cursor:pointer; padding:6px;
+  }
+  .nav-burger span{width:20px; height:2px; background:var(--ink); display:block;}
+
+  .nav-mobile{
+    display:none;
+    flex-direction:column;
+    background:var(--paper-raised);
+    border-bottom:1px solid var(--ledger-line);
+    padding:8px 28px 16px;
+  }
+  .nav-mobile a{
+    padding:12px 0; font-size:15px; text-decoration:none; color:var(--ink);
+    border-bottom:1px solid var(--ledger-line);
+  }
+  .nav-mobile a:last-child{border-bottom:none;}
+  .nav-mobile.open{display:flex;}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .nav-burger{display:flex;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{padding:72px 0 0; border-bottom:1px solid var(--ledger-line);}
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--clay); margin:0 0 20px; display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{content:''; display:inline-block; width:22px; height:1px; background:var(--clay);}
+  .hero h1{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(2.2rem, 5.2vw, 3.6rem);
+    line-height:1.1; margin:0 0 22px; color:var(--forest-deep); letter-spacing:-0.01em;
+  }
+  .hero-sub{font-size:17.5px; max-width:600px; color:#2c332f; margin:0 0 14px;}
+  .hero-sub strong{color:var(--forest-deep);}
+  .hero-avail{
+    font-family:var(--mono); font-size:13px; color:var(--muted);
+    margin:0 0 34px; display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+  }
+  .hero-avail .dot{width:7px; height:7px; border-radius:50%; background:var(--forest); display:inline-block;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:0;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:2px;
+    font-size:14px; font-weight:600; text-decoration:none; border:1px solid transparent;
+    transition:all .15s ease; cursor:pointer;
+  }
+  .btn-primary{background:var(--forest-deep); color:var(--paper);}
+  .btn-primary:hover{background:var(--forest);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink); background:none;}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  .hero-strip{
+    margin-top:44px;
+    display:grid; grid-template-columns:repeat(3, 1fr);
+    border-top:1px solid var(--ledger-line);
+  }
+  .hero-stat{padding:22px 20px 22px 0; border-right:1px solid var(--ledger-line);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat .num{font-family:var(--mono); font-size:24px; font-weight:600; color:var(--forest-deep); display:block;}
+  .hero-stat .label{font-size:12px; color:var(--muted-2); margin-top:4px; display:block;}
+
+  @media (max-width:640px){
+    .hero-strip{grid-template-columns:1fr;}
+    .hero-stat{border-right:none; border-bottom:1px solid var(--ledger-line); padding:18px 0;}
+    .hero-stat:last-child{border-bottom:none;}
+  }
+
+  /* ===== SECTION SCAFFOLDING ===== */
+  section{padding:72px 0; border-bottom:1px solid var(--ledger-line);}
+  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:12px;}
+  .sec-num{font-family:var(--mono); font-size:13px; color:var(--clay); font-weight:600;}
+  .sec-head h2{font-family:var(--serif); font-size:clamp(1.6rem, 3vw, 2.2rem); font-weight:600; margin:0; color:var(--forest-deep);}
+  .sec-lede{max-width:620px; color:var(--muted); font-size:15.5px; margin:0 0 40px;}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:56px; align-items:start;}
+  .about-body p{font-size:16.5px; color:#2c332f; margin:0 0 18px;}
+  .about-body p:last-child{margin-bottom:0;}
+  .about-facts{
+    font-family:var(--mono); font-size:13.5px;
+    padding:20px; border:1px solid var(--ledger-line); border-radius:2px;
+  }
+  .fact-row{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px dashed var(--ledger-line);}
+  .fact-row:first-child{padding-top:0;}
+  .fact-row:last-child{border-bottom:none; padding-bottom:0;}
+  .fact-row .k{color:var(--muted-2);}
+  .fact-row .v{color:var(--ink); text-align:right; font-weight:500;}
+
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ===== SKILLS ===== */
+  .skills-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--ledger-line); border:1px solid var(--ledger-line);}
+  .skill-card{background:var(--paper-raised); padding:26px 28px;}
+  .skill-card h3{font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--clay); margin:0 0 6px;}
+  .skill-card .skill-sub{font-size:12.5px; color:var(--muted-2); margin:0 0 16px;}
+  .skill-card ul{list-style:none; margin:0; padding:0;}
+  .skill-card li{font-size:14.5px; color:#2c332f; padding:7px 0; border-bottom:1px solid var(--ledger-line);}
+  .skill-card li:last-child{border-bottom:none;}
+
+  @media (max-width:700px){.skills-grid{grid-template-columns:1fr;}}
+
+  /* ===== CERTIFICATIONS ===== */
+  .cert-tier-label{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--muted-2); margin:32px 0 4px;
+  }
+  .cert-tier-label:first-child{margin-top:0;}
+  .cert-row{display:grid; grid-template-columns:1fr auto auto; gap:20px; align-items:center; padding:18px 0; border-bottom:1px solid var(--ledger-line);}
+  .cert-row:last-child{border-bottom:none;}
+  .cert-row-2col{grid-template-columns:1fr auto;}
+  .cert-name{font-size:15.5px; font-weight:600; color:var(--ink);}
+  .cert-issuer{font-size:13.5px; color:var(--muted-2); margin-top:2px;}
+  .cert-date{font-family:var(--mono); font-size:12px; color:var(--muted-2); white-space:nowrap;}
+  .cert-link{
+    font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--forest-deep);
+    border:1px solid var(--ledger-line); padding:7px 12px; border-radius:2px; white-space:nowrap;
+    transition:all .15s ease;
+  }
+  .cert-link:hover{background:var(--forest-deep); color:var(--paper); border-color:var(--forest-deep);}
+
+  @media (max-width:600px){
+    .cert-row{grid-template-columns:1fr; gap:6px;}
+    .cert-date{order:3;}
+  }
+
+  /* ===== EXPERIENCE ===== */
+  .exp-item{display:grid; grid-template-columns:170px 1fr; gap:28px; padding:26px 0; border-bottom:1px solid var(--ledger-line);}
+  .exp-item:first-child{padding-top:0;}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-period{font-family:var(--mono); font-size:12px; color:var(--muted-2); padding-top:3px;}
+  .exp-period .current{
+    display:inline-block; margin-top:8px; font-size:10px; letter-spacing:0.05em; text-transform:uppercase;
+    background:var(--forest); color:var(--paper); padding:3px 8px; border-radius:2px;
+  }
+  .exp-role{font-size:16.5px; font-weight:700; color:var(--ink); margin:0 0 2px;}
+  .exp-org{font-size:13.5px; color:var(--muted-2); margin:0 0 12px;}
+  .exp-item ul{margin:0; padding-left:18px;}
+  .exp-item li{font-size:14.5px; color:#3c433f; margin-bottom:6px;}
+
+  @media (max-width:640px){.exp-item{grid-template-columns:1fr; gap:8px;}}
+
+  /* ===== OUTCOME BAND (above projects) ===== */
+  .outcome-band{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--ledger-line); border:1px solid var(--ledger-line);
+    margin-bottom:44px;
+  }
+  .outcome-card{background:var(--paper-raised); padding:24px 22px;}
+  .outcome-card .q{font-family:var(--mono); font-size:11px; color:var(--clay); margin:0 0 8px;}
+  .outcome-card p{font-size:14.5px; color:var(--ink); margin:0; line-height:1.5;}
+
+  @media (max-width:760px){.outcome-band{grid-template-columns:1fr;}}
+
+  /* ===== PROJECTS ===== */
+  .proj-grid{display:grid; grid-template-columns:1fr; gap:1px; background:var(--ledger-line); border:1px solid var(--ledger-line);}
+  .proj-card{background:var(--paper-raised); padding:30px 32px; display:grid; grid-template-columns:34px 1fr; gap:20px;}
+  .proj-idx{font-family:var(--mono); font-size:13px; color:var(--clay); font-weight:600; padding-top:3px;}
+  .proj-title{font-size:18px; font-weight:700; color:var(--forest-deep); margin:0 0 4px;}
+  .proj-fit{font-family:var(--mono); font-size:11.5px; color:var(--muted-2); margin:0 0 12px;}
+  .proj-desc{font-size:14.5px; color:#3c433f; margin:0 0 16px; max-width:640px;}
+  .proj-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
+  .proj-tags span{font-family:var(--mono); font-size:11px; color:var(--forest-deep); background:#e9e6da; padding:4px 9px; border-radius:2px;}
+  .proj-chart{
+    margin:4px 0 20px;
+    border:1px solid var(--ledger-line);
+    border-radius:2px;
+    overflow:hidden;
+    background:var(--paper-raised);
+  }
+  .proj-chart img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .proj-metrics{
+    display:flex; flex-wrap:wrap; gap:10px 26px; margin-bottom:20px; padding:14px 0;
+    border-top:1px dashed var(--ledger-line); border-bottom:1px dashed var(--ledger-line);
+  }
+  .proj-metrics .m{min-width:110px;}
+  .proj-metrics .m .mv{font-family:var(--mono); font-size:14.5px; font-weight:600; color:var(--forest-deep); display:block;}
+  .proj-metrics .m .ml{font-size:11.5px; color:var(--muted-2);}
+  .proj-actions{display:flex; gap:12px; flex-wrap:wrap;}
+  .proj-actions a, .proj-actions button{
+    font-size:13px; font-weight:600; text-decoration:none; padding:9px 16px; border-radius:2px;
+    transition:all .15s ease; font-family:inherit; cursor:pointer;
+  }
+  .view-code{border:1px solid var(--ink); color:var(--ink); background:none;}
+  .view-code:hover{background:var(--ink); color:var(--paper);}
+  .view-summary{background:var(--forest-deep); color:var(--paper); border:1px solid var(--forest-deep);}
+  .view-summary:hover{background:var(--forest);}
+
+  @media (max-width:640px){
+    .proj-card{grid-template-columns:1fr; gap:8px;}
+    .proj-idx{display:none;}
+  }
+
+  /* ===== APPROACH (how I think) ===== */
+  .approach-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--ledger-line); border:1px solid var(--ledger-line);}
+  .approach-card{background:var(--paper-raised); padding:28px 26px;}
+  .approach-card .step{font-family:var(--mono); font-size:12px; color:var(--clay); margin:0 0 10px;}
+  .approach-card h3{font-size:16px; font-weight:700; margin:0 0 10px; color:var(--forest-deep);}
+  .approach-card p{font-size:14px; color:#3c433f; margin:0;}
+
+  @media (max-width:760px){.approach-grid{grid-template-columns:1fr;}}
+
+  .memo-sample{
+    margin-top:36px;
+    border-left:2px solid var(--clay);
+    padding:22px 26px;
+    background:var(--paper-raised);
+    border-radius:0 2px 2px 0;
+  }
+  .memo-sample .memo-label{font-family:var(--mono); font-size:11px; color:var(--clay); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 10px;}
+  .memo-sample p{font-family:var(--serif); font-size:15.5px; color:#2c332f; margin:0 0 10px; line-height:1.6;}
+  .memo-sample p:last-child{margin-bottom:0;}
+  .memo-sample .memo-src{font-family:var(--mono); font-size:11.5px; color:var(--muted-2); margin-top:14px;}
+
+  /* ===== CONTACT ===== */
+  .contact-section{border-bottom:none; padding-bottom:0;}
+  .contact-box{background:var(--forest-deep); color:var(--paper); padding:60px 44px; border-radius:2px; text-align:center;}
+  .contact-box h2{font-family:var(--serif); font-size:clamp(1.7rem, 4vw, 2.4rem); font-weight:600; margin:0 0 14px;}
+  .contact-box p{font-size:15.5px; color:#cfe0d8; max-width:480px; margin:0 auto 14px;}
+  .contact-box .avail-line{font-family:var(--mono); font-size:12.5px; color:#a9c4b8; margin:0 auto 32px;}
+  .contact-links{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  .contact-links a{
+    font-size:14px; font-weight:600; text-decoration:none; padding:12px 22px; border-radius:2px;
+    border:1px solid rgba(246,244,238,0.35); color:var(--paper); transition:all .15s ease;
+  }
+  .contact-links a:hover{background:var(--paper); color:var(--forest-deep);}
+  .contact-links a.primary{background:var(--clay); border-color:var(--clay);}
+  .contact-links a.primary:hover{background:#9c4726; color:var(--paper);}
+
+  footer{text-align:center; padding:26px 0 40px; font-size:12px; color:var(--muted-2); font-family:var(--mono);}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.visible{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  :focus-visible{outline:2px solid var(--clay); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">OSARETIN.IDIAGBONMWEN</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#approach">Approach</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-eyebrow">Chartered Accountant → FP&A</p>
+      <h1>FP&A analyst for DTC and SaaS companies.</h1>
+      <p class="hero-sub">I'm Osaretin. Before I built a single forecast, I spent years learning what happens when a number is wrong. I build 3-statement models, cash forecasts, and variance analysis on <strong>real data</strong>, and I check every one against its source before I call it finished.</p>
+      <p class="hero-avail"><span class="dot"></span>Open to remote, full-time, or contract FP&A roles</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View the work</a>
+        <a href="https://drive.google.com/file/d/1i-5Q4Hnq8-70wy11na3x35BjVb4D4LuD/view" target="_blank" rel="noopener" class="btn btn-ghost">Download CV</a>
+      </div>
+      <div class="hero-strip ledger-bg">
+        <div class="hero-stat">
+          <span class="num">$0</span>
+          <span class="label">Balance sheet gap, WRBY model, 5 years × 3 scenarios</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">5yr</span>
+          <span class="label">Of real SEC filings pulled and reconciled by hand</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">6</span>
+          <span class="label">Full FP&A models, each built on real company or transaction data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2>About</h2></div>
+      <div class="about-grid">
+        <div class="about-body reveal">
+          <p>I trained as a Chartered Accountant. That meant years of learning what happens when a number is wrong, not just how to build one. It's the standard I still hold my models to.</p>
+          <p>I moved into FP&A because I wanted to work further up the chain. Not just recording what already happened, but building the models that help someone decide what to do next: which channel to fund, where cash gets tight, what a variance is actually telling you.</p>
+          <p>I focus on DTC and SaaS specifically because that discipline matters most there. These businesses run on judgment calls: how a cohort's retention curve will bend, how revenue should be recognized, what a channel's real contribution margin is once you strip out the noise. Someone trained to distrust a number until it reconciles is a genuine advantage in exactly those situations.</p>
+          <p>My projects are built on real data where I could get it: SEC filings, live e-commerce transactions, UK retail history. Where I had to assume something, I labeled it as an assumption.</p>
+        </div>
+        <div class="about-facts reveal">
+          <div class="fact-row"><span class="k">Based in</span><span class="v">Nigeria</span></div>
+          <div class="fact-row"><span class="k">Focus</span><span class="v">DTC & SaaS finance</span></div>
+          <div class="fact-row"><span class="k">Credential</span><span class="v">ACA (ICAN)</span></div>
+          <div class="fact-row"><span class="k">Background</span><span class="v">Accounting + applied data analytics</span></div>
+          <div class="fact-row"><span class="k">Core tools</span><span class="v">Excel, SQL, Python</span></div>
+          <div class="fact-row"><span class="k">GitHub</span><span class="v"><a href="https://github.com/OsasAnalyst" target="_blank" rel="noopener">github.com/OsasAnalyst</a></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Skills</h2></div>
+      <p class="sec-lede">What I bring to an FP&A seat.</p>
+      <div class="skills-grid reveal">
+        <div class="skill-card">
+          <h3>Planning & Modeling</h3>
+          <p class="skill-sub">Building the model itself</p>
+          <ul>
+            <li>3-statement modeling (IS / BS / CF)</li>
+            <li>Scenario & sensitivity planning</li>
+            <li>Driver-based revenue forecasting</li>
+            <li>Rolling cash flow forecasting</li>
+            <li>Working capital & AR/AP schedules</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Analysis & Reporting</h3>
+          <p class="skill-sub">Turning the model into a decision</p>
+          <ul>
+            <li>Budget vs actual variance (PVM)</li>
+            <li>Materiality-based flagging</li>
+            <li>Cash runway analysis</li>
+            <li>Board reporting & CFO-style memos</li>
+            <li>KPI dashboarding</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>DTC & SaaS Metrics</h3>
+          <p class="skill-sub">Where I focus by industry</p>
+          <ul>
+            <li>Unit economics (LTV:CAC, payback)</li>
+            <li>Cohort retention analysis</li>
+            <li>MRR / ARR bridges</li>
+            <li>NRR / GRR</li>
+            <li>Contribution margin by channel</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Tools & Systems</h3>
+          <p class="skill-sub">What I build with</p>
+          <ul>
+            <li>Excel — advanced</li>
+            <li>SQL (MySQL)</li>
+            <li>Python (pandas)</li>
+            <li>Power BI (DAX, Power Query)</li>
+            <li>SEC EDGAR data extraction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Certifications</h2></div>
+      <div class="reveal">
+        <p class="cert-tier-label">Professional Credentials</p>
+        <div class="cert-row cert-row-2col">
+          <div><div class="cert-name">Chartered Accountant (ACA)</div><div class="cert-issuer">Institute of Chartered Accountants of Nigeria (ICAN)</div></div>
+          <span class="cert-date">Credential</span>
+        </div>
+        <div class="cert-row cert-row-2col">
+          <div><div class="cert-name">AATWA</div><div class="cert-issuer">Association of Accounting Technicians, West Africa</div></div>
+          <span class="cert-date">Credential</span>
+        </div>
+
+        <p class="cert-tier-label">Education</p>
+        <div class="cert-row cert-row-2col">
+          <div><div class="cert-name">BSc, Accounting and Finance</div><div class="cert-issuer">University of Benin</div></div>
+          <span class="cert-date">Degree</span>
+        </div>
+
+        <p class="cert-tier-label">Supplementary Training</p>
+        <div class="cert-row">
+          <div><div class="cert-name">Power BI Beginner to Pro Workshop</div><div class="cert-issuer">Pragmatic Works</div></div>
+          <span class="cert-date">Oct 2025</span>
+          <a class="cert-link" href="https://github.com/OsasAnalyst/powerbi-certification" target="_blank" rel="noopener">View →</a>
+        </div>
+        <div class="cert-row">
+          <div><div class="cert-name">Data Modeling for Power BI</div><div class="cert-issuer">Pragmatic Works</div></div>
+          <span class="cert-date">Oct 2025</span>
+          <a class="cert-link" href="https://github.com/OsasAnalyst/powerbi-data-modeling" target="_blank" rel="noopener">View →</a>
+        </div>
+        <div class="cert-row">
+          <div><div class="cert-name">Data Analysis Job Simulation</div><div class="cert-issuer">Quantium, via Forage</div></div>
+          <span class="cert-date">Simulation</span>
+          <a class="cert-link" href="https://github.com/OsasAnalyst/Data-Analysis-Certificate-Quantium" target="_blank" rel="noopener">View →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Experience</h2></div>
+      <p class="sec-lede">Real, hands-on work managing accounts, records, and customers, described by what I actually did.</p>
+      <div class="reveal">
+        <div class="exp-item">
+          <div class="exp-period">Nov 2025 — Present<br><span class="current">Current</span></div>
+          <div>
+            <div class="exp-role">Sales Accounts & Cash Reconciliation</div>
+            <div class="exp-org">Olori 19 Lounge · NYSC placement, bartending role</div>
+            <ul>
+              <li>Reconcile daily sales accounts and cash against service records</li>
+              <li>Maintain accurate transaction and inventory records</li>
+              <li>Handle customer service in a fast-paced, high-volume environment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Prior role</div>
+          <div>
+            <div class="exp-role">Inventory & Sales Recordkeeping</div>
+            <div class="exp-org">Salisco Warehouse · family-owned retail operation</div>
+            <ul>
+              <li>Tracked stock levels across the SKU catalog and flagged replenishment needs before stockouts</li>
+              <li>Handled day-to-day sales transactions and kept accurate sales and inventory records</li>
+              <li>Managed customer relationships and resolved complaints</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Jan 2023 — Dec 2023</div>
+          <div>
+            <div class="exp-role">Client Negotiation & Deal Closing</div>
+            <div class="exp-org">Osas Property Group · self-employed real estate agent, Edo State</div>
+            <ul>
+              <li>Negotiated and closed residential and commercial property transactions independently, end to end</li>
+              <li>Built a client pipeline from cold outreach through signed deal</li>
+              <li>Conducted property evaluations to support pricing and negotiation positions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Prior role</div>
+          <div>
+            <div class="exp-role">Quantitative Reasoning Instruction</div>
+            <div class="exp-org">Lecture house / tutorial center · mathematics instructor</div>
+            <ul>
+              <li>Taught mathematics to students at a range of levels, breaking complex problems into clear, structured steps</li>
+              <li>Built explanations tailored to individual students rather than a single fixed method</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Projects</h2></div>
+      <p class="sec-lede">FP&A models, each naming its data source and every assumption, so nothing here is dressed up as more real than it is.</p>
+
+      <div class="outcome-band reveal">
+        <div class="outcome-card"><p class="q">Cash</p><p>Flags where cash runs tight before it becomes a crisis, not after.</p></div>
+        <div class="outcome-card"><p class="q">Revenue</p><p>Shows which channel or cohort is underperforming, and by how much.</p></div>
+        <div class="outcome-card"><p class="q">Reporting</p><p>Turns raw transactions into a board-ready number in one run.</p></div>
+      </div>
+
+      <div class="proj-grid reveal">
+
+        <div class="proj-card">
+          <div class="proj-idx">01</div>
+          <div>
+            <h3 class="proj-title">3-Statement Model — Warby Parker (WRBY)</h3>
+            <p class="proj-fit">Shows public-company-grade modeling rigor</p>
+            <p class="proj-desc">A full 3-statement model built from five years of Warby Parker's actual SEC 10-K filings. Forecasts income statement, balance sheet, and cash flow five years forward under Base, Best, and Worst scenarios. Every line traces back to a real filing.</p>
+            <div class="proj-tags"><span>SEC EDGAR</span><span>Python</span><span>Excel</span><span>Scenario Planning</span></div>
+            <div class="proj-chart"><img src="images/wrby_revenue.png" alt="Bar chart showing Warby Parker's historical revenue from 2021 to 2025 and Best-case forecast revenue from 2026 to 2030, growing from $541M to $1.6B" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">$0 gap</span><span class="ml">Assets = Liabilities + Equity, all 5yrs × 3 scenarios</span></div>
+              <div class="m"><span class="mv">11 tabs</span><span class="ml">Control panel to KPI dashboard</span></div>
+              <div class="m"><span class="mv">NOL ramp</span><span class="ml">Tax modeled on utilization, not trend</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/3-statement-model-warbyparker" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1RU6M_sd-9rwjv9w7cD1-x3mcJaZrSAV1/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-idx">02</div>
+          <div>
+            <h3 class="proj-title">Monthly Board Reporting Package</h3>
+            <p class="proj-fit">Shows reporting automation at operational scale</p>
+            <p class="proj-desc">A six-script pipeline that validates data, computes KPIs and PVM variance, writes rule-based commentary, produces a rolling forecast, and assembles a board-ready PowerPoint deck. One command, start to finish.</p>
+            <div class="proj-tags"><span>Python</span><span>pandas</span><span>python-pptx</span><span>Automation</span></div>
+            <div class="proj-chart"><img src="images/board_report.png" alt="Bar chart comparing August 2018 budget of $579,865 against actual revenue of $838,577, the largest variance month in the demo run" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">$856K</span><span class="ml">Largest month actual vs $441K budget</span></div>
+              <div class="m"><span class="mv">±2.7%</span><span class="ml">Rolling forecast backtest accuracy</span></div>
+              <div class="m"><span class="mv">1 command</span><span class="ml">Full monthly close, --all flag</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/monthly-board-reporting-package" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1c3ehuH0oKtcHxOVjSFD_bQDNnSpata3l/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-idx">03</div>
+          <div>
+            <h3 class="proj-title">Budget vs Actual Variance Analysis</h3>
+            <p class="proj-fit">Shows operational DTC finance, real transaction data</p>
+            <p class="proj-desc">Driver-based variance analysis on real Olist e-commerce transaction data. Breaks revenue variance into Price, Volume, and Mix, flags material OpEx flux against a dual threshold, and outputs a CFO-style memo naming which categories to act on.</p>
+            <div class="proj-tags"><span>MySQL</span><span>SQL</span><span>Excel</span><span>PVM Analysis</span></div>
+            <div class="proj-chart"><img src="images/variance_trend.png" alt="Grouped bar chart comparing monthly budget vs actual revenue from January to August 2018, showing actual consistently exceeding budget" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">PVM</span><span class="ml">Price-Volume-Mix decomposition by category</span></div>
+              <div class="m"><span class="mv">$5K / 5%</span><span class="ml">Dual materiality threshold</span></div>
+              <div class="m"><span class="mv">Native</span><span class="ml">Excel waterfall bridge</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/budget-vs-actual-variance" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1upzx7B4ewzevwWMQ2fnhcOlkoLxIaFNc/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-idx">04</div>
+          <div>
+            <h3 class="proj-title">SaaS MRR Bridge & Cohort Retention</h3>
+            <p class="proj-fit">Shows SaaS-specific metrics and business partnering</p>
+            <p class="proj-desc">An end-to-end SaaS FP&A workflow for Meridian Cloud Solutions: subscription-level movement classified in SQL, aggregated into a monthly MRR bridge, visualized on a board dashboard, and interpreted in a memo that names which cohort is underperforming and why.</p>
+            <div class="proj-tags"><span>SQL</span><span>Excel</span><span>PowerPoint</span><span>SaaS Metrics</span></div>
+            <div class="proj-chart"><img src="images/mrr_bridge.png" alt="Waterfall chart of the August 2025 MRR bridge, moving from starting MRR of $197,422 through new, expansion, reactivated, contraction, and churned MRR to an ending MRR of $204,517" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">$252,915</span><span class="ml">Ending MRR, +$13,483 MoM</span></div>
+              <div class="m"><span class="mv">100.8% / 97.7%</span><span class="ml">NRR / GRR</span></div>
+              <div class="m"><span class="mv">1 cohort</span><span class="ml">Flagged underperforming vs peers</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/saas-mrr-bridge-cohort-retention-model" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1EhmHrFB63faIxJNvcubD_ewIDVZ27Rtv/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-idx">05</div>
+          <div>
+            <h3 class="proj-title">13-Week Rolling Cash Flow Forecast</h3>
+            <p class="proj-fit">Shows cash runway analysis under stress</p>
+            <p class="proj-desc">A rolling 13-week cash forecast for a DTC brand with in-house payment plans, built on real Olist transaction data. Models collection lag by payment type and stress-tests five real-world scenarios against a cash risk threshold.</p>
+            <div class="proj-tags"><span>SQL</span><span>Python</span><span>Excel</span><span>Scenario Testing</span></div>
+            <div class="proj-chart"><img src="images/cashflow_13wk.png" alt="Line chart of the 13-week baseline cash forecast, rising from $556,221 to $2,227,209, holding well above the $417,000 risk threshold every week" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">5 scenarios</span><span class="ml">Stress-tested against cash risk threshold</span></div>
+              <div class="m"><span class="mv">13 / 13 weeks</span><span class="ml">Baseline holds above risk threshold</span></div>
+              <div class="m"><span class="mv">2 days</span><span class="ml">Median boleto collection lag identified</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/13-week-cash-flow-forecast" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1KQH5KeeaWepQOLHbnFx9wgoimvTF8ZyW/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-idx">06</div>
+          <div>
+            <h3 class="proj-title">Unit Economics Model</h3>
+            <p class="proj-fit">Shows which channel a business should fund or cut</p>
+            <p class="proj-desc">LTV:CAC and payback period by marketing channel, built on real UK retail transaction data spanning 2009 to 2011. Real observed LTV, paired with clearly labeled CAC benchmark assumptions, to identify which channel actually pays back.</p>
+            <div class="proj-tags"><span>SQL</span><span>Python</span><span>Excel</span><span>Unit Economics</span></div>
+            <div class="proj-chart"><img src="images/unit_economics.png" alt="Horizontal bar chart of LTV to CAC ratio by acquisition channel: Direct 1257 to 1, Organic 741 to 1, Email 322 to 1, Paid Social 101 to 1, Paid Search 95 to 1" loading="lazy"></div>
+            <div class="proj-metrics">
+              <div class="m"><span class="mv">5,876</span><span class="ml">Real customers analyzed</span></div>
+              <div class="m"><span class="mv">5 channels</span><span class="ml">LTV:CAC & payback compared</span></div>
+              <div class="m"><span class="mv">25.6%</span><span class="ml">One-time-buyer rate identified</span></div>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/OsasAnalyst/unit-economics-model" target="_blank" rel="noopener" class="view-code">View Code →</a>
+              <a href="https://drive.google.com/file/d/1ue9G6u2Uk83JCC6H0MbPqsg1j__hUGDX/view" target="_blank" rel="noopener" class="view-summary">View Summary (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">06</span><h2>How I work</h2></div>
+      <p class="sec-lede">A model is only as good as the judgment behind it. This is the process I use on every project.</p>
+      <div class="approach-grid reveal">
+        <div class="approach-card">
+          <p class="step">Step 1</p>
+          <h3>Validate the source</h3>
+          <p>Before I model anything, I check where the data actually comes from and whether it's complete. A model built on a bad extract is wrong before the first formula.</p>
+        </div>
+        <div class="approach-card">
+          <p class="step">Step 2</p>
+          <h3>Decide what's material</h3>
+          <p>Not every variance deserves a paragraph. I set explicit dollar and percentage thresholds up front, so the analysis flags what actually matters and stays quiet on noise.</p>
+        </div>
+        <div class="approach-card">
+          <p class="step">Step 3</p>
+          <h3>Write it for the reader</h3>
+          <p>A model that only I can read has failed. Every project ends in a memo or dashboard built for someone who wasn't in the spreadsheet with me.</p>
+        </div>
+      </div>
+
+      <div class="memo-sample reveal">
+        <p class="memo-label">Sample memo excerpt</p>
+        <p>Revenue came in $18,400 below budget for the month, but the story is mix, not demand. Unit volume beat plan by 6%. The gap is almost entirely price: the mid-tier SKU discount ran two weeks longer than planned, and it's the highest-volume line in the category.</p>
+        <p>Recommend closing the discount window on schedule next month before assuming a demand problem exists.</p>
+        <p class="memo-src">— Representative of my memo style</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <h2>Let's talk numbers.</h2>
+        <p>If you need someone who can build a model from scratch, explain a variance without jargon, and reconcile it back to the source, I'd like to hear from you.</p>
+        <p class="avail-line">Open to remote work · full-time or contract</p>
+        <div class="contact-links">
+          <a href="mailto:oidiagbonmwen@gmail.com" class="primary">Email me</a>
+          <a href="https://www.linkedin.com/in/osaretin-idiagbonmwen-33ab85339" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/OsasAnalyst" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Osaretin Idiagbonmwen · Actively looking for FP&A opportunities
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
